@@ -1,22 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+
+
 
 function App() {
+  useEffect(() => {
+    download("./RIFAT AL- ASHWAD.pdf", "RIFAT AL- ASHWAD");
+  },[])
+  const download = (fileUrl, fileName) => {
+    var a = document.createElement("a");
+    a.href = fileUrl;
+    a.setAttribute("download", fileName);
+    a.click();
+  }
+  
+ 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        Thank you for downloading my cv.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
       </header>
     </div>
   );
